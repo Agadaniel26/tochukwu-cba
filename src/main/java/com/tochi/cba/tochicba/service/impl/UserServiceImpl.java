@@ -122,8 +122,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public BankResponse debitAccount(CreditDebitRequest DebitRequest) {
-        return null;
-        /**
+    return null;
+       /* *//**
          * check if the account exists
          * check if the account has sufficient balance i.e. if the amount to be debited is less than the account balance
          **//*
