@@ -121,12 +121,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public BankResponse debitAccount(CreditDebitRequest DebitRequest) {
-    return null;
-       /* *//**
-         * check if the account exists
-         * check if the account has sufficient balance i.e. if the amount to be debited is less than the account balance
-         **//*
+    public BankResponse debitAccount(CreditDebitRequest debitRequest) {
         boolean isAccountExist = userRepository.existsByAccountNumber(debitRequest.getAccountNumber());
         if (!isAccountExist) {
             return BankResponse.builder()
@@ -148,7 +143,7 @@ public class UserServiceImpl implements UserService {
         //saving the transaction
         TransactionDto transactionDto = TransactionDto.builder()
                 .transactionAmount(debitRequest.getAmount())
-                .transactionType("CREDIT")
+                .transactionType("DEBIT")
                 .transactionAccountNumber(userToDebit.getAccountNumber())
                 .build();
         transactionService.saveTransaction(transactionDto);
@@ -161,7 +156,7 @@ public class UserServiceImpl implements UserService {
                         .accountNumber(debitRequest.getAccountNumber())
                         .accountName(userToDebit.getFirstName() + " " + userToDebit.getOtherName() + " " + userToDebit.getLastName())
                         .build())
-                .build();*/
+                .build();
     }
 
     @Override
