@@ -120,45 +120,45 @@ public class UserServiceImpl implements UserService {
     @Override
     public BankResponse debitAccount(CreditDebitRequest DebitRequest) {
         return null;
-//        /
-//         * check if the account exists
-//         * check if the account has sufficient balance i.e. if the amount to be debited is less than the account balance
-//         */
-//        boolean isAccountExist = userRepository.existsByAccountNumber(debitRequest.getAccountNumber());
-//        if (!isAccountExist) {
-//            return BankResponse.builder()
-//                    .responseCode(AccountUtils.ACCOUNT_NOT_EXIST_CODE)
-//                    .responseMessage(AccountUtils.ACCOUNT_NOT_EXIST_MESSAGE)
-//                    .accountInfo(null)
-//                    .build();
-//        }
-//        User userToDebit = userRepository.findByAccountNumber(debitRequest.getAccountNumber());
-//        if (userToDebit.getAccountBalance().compareTo(debitRequest.getAmount()) < 0) {
-//            return BankResponse.builder()
-//                    .responseCode(AccountUtils.ACCOUNT_DEBITED_INSUFFICIENT_BALANCE_CODE)
-//                    .responseMessage(AccountUtils.ACCOUNT_DEBITED_INSUFFICIENT_BALANCE_MESSAGE)
-//                    .accountInfo(null)
-//                    .build();
-//        }
-//        userToDebit.setAccountBalance(userToDebit.getAccountBalance().subtract(debitRequest.getAmount()));
-//        userRepository.save(userToDebit);
-//        //saving the transaction
-//        TransactionDto transactionDto = TransactionDto.builder()
-//                .transactionAmount(debitRequest.getAmount())
-//                .transactionType("CREDIT")
-//                .transactionAccountNumber(userToDebit.getAccountNumber())
-//                .build();
-//        transactionService.saveTransaction(transactionDto);
-//
-//        return BankResponse.builder()
-//                .responseCode(AccountUtils.ACCOUNT_DEBITED_SUCCESS)
-//                .responseMessage(AccountUtils.ACCOUNT_DEBITED_SUCCESS_MESSAGE)
-//                .accountInfo(AccountInfo.builder()
-//                        .accountBalance(userToDebit.getAccountBalance())
-//                        .accountNumber(debitRequest.getAccountNumber())
-//                        .accountName(userToDebit.getFirstName() + " " + userToDebit.getOtherName() + " " + userToDebit.getLastName())
-//                        .build())
-//                .build();
+        /**
+         * check if the account exists
+         * check if the account has sufficient balance i.e. if the amount to be debited is less than the account balance
+         **//*
+        boolean isAccountExist = userRepository.existsByAccountNumber(debitRequest.getAccountNumber());
+        if (!isAccountExist) {
+            return BankResponse.builder()
+                    .responseCode(AccountUtils.ACCOUNT_NOT_EXIST_CODE)
+                    .responseMessage(AccountUtils.ACCOUNT_NOT_EXIST_MESSAGE)
+                    .accountInfo(null)
+                    .build();
+        }
+        User userToDebit = userRepository.findByAccountNumber(debitRequest.getAccountNumber());
+        if (userToDebit.getAccountBalance().compareTo(debitRequest.getAmount()) < 0) {
+            return BankResponse.builder()
+                    .responseCode(AccountUtils.ACCOUNT_DEBITED_INSUFFICIENT_BALANCE_CODE)
+                    .responseMessage(AccountUtils.ACCOUNT_DEBITED_INSUFFICIENT_BALANCE_MESSAGE)
+                    .accountInfo(null)
+                    .build();
+        }
+        userToDebit.setAccountBalance(userToDebit.getAccountBalance().subtract(debitRequest.getAmount()));
+        userRepository.save(userToDebit);
+        //saving the transaction
+        TransactionDto transactionDto = TransactionDto.builder()
+                .transactionAmount(debitRequest.getAmount())
+                .transactionType("CREDIT")
+                .transactionAccountNumber(userToDebit.getAccountNumber())
+                .build();
+        transactionService.saveTransaction(transactionDto);
+
+        return BankResponse.builder()
+                .responseCode(AccountUtils.ACCOUNT_DEBITED_SUCCESS)
+                .responseMessage(AccountUtils.ACCOUNT_DEBITED_SUCCESS_MESSAGE)
+                .accountInfo(AccountInfo.builder()
+                        .accountBalance(userToDebit.getAccountBalance())
+                        .accountNumber(debitRequest.getAccountNumber())
+                        .accountName(userToDebit.getFirstName() + " " + userToDebit.getOtherName() + " " + userToDebit.getLastName())
+                        .build())
+                .build();*/
     }
 
     @Override

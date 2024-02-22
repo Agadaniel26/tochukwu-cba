@@ -9,9 +9,9 @@ import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 
 @Data
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class CreditDebitRequest {
     @Schema(
             description = "User Account Number",
