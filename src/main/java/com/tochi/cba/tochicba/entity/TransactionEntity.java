@@ -1,14 +1,15 @@
 package com.tochi.cba.tochicba.entity;
 
 import com.tochi.cba.tochicba.enums.Status;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -19,9 +20,10 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Builder
 public class TransactionEntity {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long transactionId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String transactionType;
     private BigDecimal transactionAmount;
     private String transactionAccountNumber;

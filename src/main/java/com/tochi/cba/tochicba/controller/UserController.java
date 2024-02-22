@@ -5,15 +5,17 @@ import com.tochi.cba.tochicba.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/user/v1/")
+@RequestMapping("/api/v1/user")
 @Tag(name = "User Account Management APIs", description = "The user API")
+@RequiredArgsConstructor
 public class UserController {
-    @Autowired
-    UserService userService;
+
+    private final UserService userService;
 
     @PostMapping("/createAccount")
     @Operation(summary = "Create a new user account", description = "This API creates a new user account and assigne an account number to the user"
