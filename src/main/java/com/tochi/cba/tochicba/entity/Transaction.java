@@ -12,12 +12,12 @@ import javax.persistence.GenerationType;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+@Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Entity(name = "Transaction")
 public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

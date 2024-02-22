@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class TransactionServiceImpl implements TransactionService {
+public class TransactionImpl implements TransactionService {
     @Autowired
     TransactionRepository transactionRepository;
     @Override
