@@ -1,7 +1,10 @@
 package com.tochi.cba.tochicba.repository;
 
-import com.tochi.cba.tochicba.entity.Transaction;
-import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface TransactionRepository extends JpaRepository<Transaction, String> {
+import com.tochi.cba.tochicba.entity.TransactionEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface TransactionRepository extends JpaRepository<TransactionEntity, Long> {
 }

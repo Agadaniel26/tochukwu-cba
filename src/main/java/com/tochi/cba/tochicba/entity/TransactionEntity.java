@@ -18,10 +18,10 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Transaction {
+public class TransactionEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String transactionId;
+    private Long transactionId;
     private String transactionType;
     private BigDecimal transactionAmount;
     private String transactionAccountNumber;

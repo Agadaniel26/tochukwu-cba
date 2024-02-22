@@ -15,7 +15,7 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @PostMapping
+    @PostMapping("/createAccount")
     @Operation(summary = "Create a new user account", description = "This API creates a new user account and assigne an account number to the user"
             + "The account number is a 10 digit number")
     @ApiResponse(responseCode = "201",
